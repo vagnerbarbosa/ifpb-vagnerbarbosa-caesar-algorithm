@@ -1,9 +1,11 @@
 <?php
 
 /**
- * Description of CaesarAlgorithm
+ * Classe de implementação dos algoritmos de Cesar 
+ * tanto para encriptação quanto desencriptação
  *
  * @author vagner
+ * @contato contato@vagnerbarbosa.com
  */
 class CaesarAlgorithm {
 
