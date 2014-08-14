@@ -19,11 +19,11 @@
     <body>
         <div id="absolute-wrapper">
             <a class="brand" href="#"> <i class="icon icon-bolt"></i>Cifra de César - Segurança de Informação 2014.2</a>
-            <form action="process-request.php" method="POST">
-                <label class="control-label control-label-1 control-label-3">Texto para cifrar:</label>
-                <textarea name="texto-para-cifrar" class="input-xxlarge pull-center input-xxlarge-1" placeholder="Texto para cifrar"></textarea>
-                <label class="control-label control-label-1 control-label-2">Texto cifrado:</label>
-                <textarea name="texto-cifrado" class="input-xxlarge pull-center input-xxlarge-2" placeholder="Texto cifrado"><?php echo $_SESSION["resposta"];
+            <form action="process-request.php" method="POST">                
+                <label class="control-label control-label-1 control-label-3">Texto para decifrar:</label>
+                <textarea name="texto-para-decifrar" class="input-xxlarge pull-center input-xxlarge-1" placeholder="Texto para decifrar"></textarea>
+                <label class="control-label control-label-1 control-label-2">Texto decifrado:</label>
+                <textarea name="texto-decifrado" class="input-xxlarge pull-center input-xxlarge-2" placeholder="Texto decifrado"><?php echo $_SESSION["resposta"];
 $_SESSION["resposta"] = ""; ?></textarea>
                 <label class="control-label control-label-2 control-label-4">Tamanho da chave:</label>
                 <input class="textinput" type="text" placeholder="Tamanho da chave" name="tamanho-chave" required>

@@ -14,41 +14,33 @@ class CaesarAlgorithm {
     }
 
     public function caesarCipherEncript($planText, $key) {
-        $cipherText = "";
-
-        if ($key < 0) {
-            $key *= -1;
-        }
-
-        for ($i = 0; $i < strlen($planText); $i++) {
-            $upperText = strtoupper($planText{$i});
-
-            if (($upperText >= "A") && ($upperText <= "Z")) {
-                $cipherText = $cipherText . (chr(ord($upperText) + $key));
+        $CaesarCipher = "";
+        for ($i = 0, $l = strlen($planText); $i < $l; ++$i) {
+            $asciiValue = ord($planText[$i]);
+            if (97 <= $asciiValue && $asciiValue < 123) {
+                $CaesarCipher .= chr(($asciiValue + $key + 7) % 26 + 97);
+            } else if (65 <= $asciiValue && $asciiValue < 91) {
+                $CaesarCipher .= chr(($asciiValue + $key + 13) % 26 + 65);
             } else {
-                $cipherText = $cipherText . " ";
+                $CaesarCipher .= $planText[$i];
             }
         }
-        return $cipherText . "\n";
+        return $CaesarCipher;
     }
 
     public function caesarCipherDecript($planText, $key) {
-        $cipherText = "";
-
-        if ($key < 0) {
-            $key *= -1;
-        }
-
-        for ($i = 0; $i < strlen($planText); $i++) {
-            $upperText = strtoupper($planText{$i});
-
-            if (($upperText >= "A") && ($upperText <= "Z")) {
-                $cipherText = $cipherText . (chr(ord($upperText) - $key));
+        $CaesarCipher = "";
+        for ($i = 0, $l = strlen($planText); $i < $l; ++$i) {
+            $asciiValue = ord($planText[$i]);
+            if (97 <= $asciiValue && $asciiValue < 123) {
+                $CaesarCipher .= chr(($asciiValue - $key + 7) % 26 + 97);
+            } else if (65 <= $asciiValue && $asciiValue < 91) {
+                $CaesarCipher .= chr(($asciiValue - $key + 13) % 26 + 65);
             } else {
-                $cipherText = $cipherText . " ";
+                $CaesarCipher .= $planText[$i];
             }
         }
-        return $cipherText . "\n";
+        return $CaesarCipher;
     }
 
 }
