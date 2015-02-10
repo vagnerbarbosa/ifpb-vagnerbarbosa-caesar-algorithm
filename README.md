@@ -1,4 +1,4 @@
-vagnerbarbosa-caesar-algorithm
+ifpb-vagnerbarbosa-caesar-algorithm
 ==============================
 
 Caesar Algorithm
